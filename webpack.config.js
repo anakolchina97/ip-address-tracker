@@ -25,10 +25,11 @@ module.exports = (env, argv) => {
           {
             from: path.resolve(__dirname, 'src', 'favicon.png'),
             to: path.resolve(__dirname, 'public')
-          }, {
+          },
+          {
             from: path.resolve(__dirname, 'src/images'),
             to: path.resolve(__dirname, 'public/images')
-          },
+          }
         ],
       }),
       new MiniCssExtractPlugin({
@@ -87,7 +88,17 @@ module.exports = (env, argv) => {
               presets: ['@babel/preset-env']
             }
           }
-        }
+        }, {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outputPath: 'images'
+              }
+            },
+          ],
+        },
       ],
     }
   }
