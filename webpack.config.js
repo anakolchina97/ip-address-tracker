@@ -9,9 +9,6 @@ module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
   const isDev = !isProd
 
-  console.log('isProd', isProd)
-  console.log('isDev', isDev)
-
   const filename = (ext) =>
     isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
 
@@ -72,7 +69,7 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.(s[ac]ss|css)$/i,
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
@@ -89,7 +86,7 @@ module.exports = (env, argv) => {
             }
           }
         }, {
-          test: /\.(png|jpe?g|gif)$/i,
+          test: /\.(png|svg|jpe?g|gif)$/i,
           use: [
             {
               loader: 'file-loader',
