@@ -3,19 +3,21 @@ module.exports = {
   parserOptions: {
     babelOptions: {
       configFile: './babel.config.json',
-    }
+    },
   },
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   extends: ['eslint:recommended', 'google'],
   rules: {
-    'semi': 'off',
+    semi: 'off',
     'comma-dangle': 'off',
     'require-jsdoc': 'off',
     'linebreak-style': 'off',
-    'object-curly-spacing': 'off'
-  }
-}
+    'object-curly-spacing': 'off',
+    indent: 'off',
+    'max-len': 'off',
+  },
+};
