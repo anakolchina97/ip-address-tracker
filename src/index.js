@@ -4,21 +4,15 @@ import iconLocation from './images/icon-location.svg';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-import {
-  validateIp,
-  addTileLayer,
-  getAddress,
-  addOffset
-} from './js/helpers';
-
+import { validateIp, addTileLayer, getAddress, addOffset } from './js/helpers';
 
 const ipInput = document.querySelector('.search-bar__input');
 const btn = document.querySelector('.search-bar__btn');
 
-const ipInfo = document.getElementById('ip')
-const locationInfo = document.getElementById('location')
-const timezoneInfo = document.getElementById('timezone')
-const ispInfo = document.getElementById('isp')
+const ipInfo = document.getElementById('ip');
+const locationInfo = document.getElementById('location');
+const timezoneInfo = document.getElementById('timezone');
+const ispInfo = document.getElementById('isp');
 
 btn.addEventListener('click', getData);
 ipInput.addEventListener('keydown', handleKey);
@@ -32,11 +26,11 @@ const mapArea = document.querySelector('.map');
 const map = L.map(mapArea, {
   center: [51.505, -0.09],
   zoom: 13,
-  zoomControl: false
+  zoomControl: false,
 });
 
 addTileLayer(map);
-L.marker([51.505, -0.09], {icon: markerIcon}).addTo(map);
+L.marker([51.505, -0.09], { icon: markerIcon }).addTo(map);
 
 function getData() {
   if (validateIp(ipInput.value)) {
@@ -59,14 +53,8 @@ function clearInput() {
 function setInfo(mapData) {
   const {
     ip,
-    location: {
-      lat,
-      lng,
-      region,
-      country,
-      timezone
-    },
-    isp
+    location: { lat, lng, region, country, timezone },
+    isp,
   } = mapData;
 
   ipInfo.textContent = ip;
@@ -75,7 +63,7 @@ function setInfo(mapData) {
   ispInfo.textContent = isp;
 
   map.setView([lat, lng]);
-  L.marker([lat, lng], {icon: markerIcon}).addTo(map);
+  L.marker([lat, lng], { icon: markerIcon }).addTo(map);
 
   if (matchMedia('(max-width: 1023px)').matches) {
     addOffset(map);
