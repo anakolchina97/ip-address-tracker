@@ -50,7 +50,7 @@
     background-color: black;
     border: none;
     outline: none;
-    color: white;
+    color: $white;
     padding: 0 1.5rem;
     border-radius: 0 10px 10px 0;
     position: relative;
@@ -65,7 +65,7 @@
       height: 7px;
       background: transparent;
       border: 2px solid;
-      border-color: white white transparent transparent;
+      border-color: $white $white transparent transparent;
       transform: rotate(45deg);
     }
   }
@@ -73,7 +73,7 @@
 
 .info {
   width: calc(100% - 3rem);
-  background-color: white;
+  background-color: $white;
   padding: 2rem;
   border-radius: 15px;
   display: flex;
