@@ -1,8 +1,8 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
+  parser: "@babel/eslint-parser",
   parserOptions: {
     babelOptions: {
-      configFile: './babel.config.json',
+      configFile: "./babel.config.json",
     },
   },
   env: {
@@ -10,14 +10,15 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['eslint:recommended', 'google'],
+  extends: ["eslint:recommended", "google"],
   rules: {
-    semi: 'off',
-    'comma-dangle': 'off',
-    'require-jsdoc': 'off',
-    'linebreak-style': 'off',
-    'object-curly-spacing': 'off',
-    indent: 'off',
-    'max-len': 'off',
+    semi: "off",
+    indent: "off",
+    "comma-dangle": "off",
+    "require-jsdoc": "off",
+    "linebreak-style": "off",
+    "object-curly-spacing": "off",
+    "max-len": "off",
+    quotes: [2, "double", { avoidEscape: true }],
   },
 };
