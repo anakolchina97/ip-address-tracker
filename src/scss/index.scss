@@ -1,10 +1,10 @@
-@import 'var';
+@import "var";
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 
 :root {
   font-size: 10px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 * {
@@ -13,7 +13,7 @@
 }
 
 .finder {
-  background: url('../images/pattern-bg.webp');
+  background: url("../images/pattern-bg.webp");
   background-size: cover;
   padding: 2rem 1.5rem 17.5rem;
   text-align: center;
@@ -50,7 +50,7 @@
     background-color: black;
     border: none;
     outline: none;
-    color: white;
+    color: $white;
     padding: 0 1.5rem;
     border-radius: 0 10px 10px 0;
     position: relative;
@@ -59,13 +59,13 @@
       background-color: rgb(77, 77, 77);
     }
     &::after {
+      content: "";
       display: block;
-      content: '';
       width: 7px;
       height: 7px;
       background: transparent;
       border: 2px solid;
-      border-color: white white transparent transparent;
+      border-color: $white $white transparent transparent;
       transform: rotate(45deg);
     }
   }
@@ -73,7 +73,7 @@
 
 .info {
   width: calc(100% - 3rem);
-  background-color: white;
+  background-color: $white;
   padding: 2rem;
   border-radius: 15px;
   display: flex;
@@ -128,7 +128,7 @@
   }
 
   .info__block::after {
-    content: '';
+    content: "";
     width: 1px;
     height: 90%;
     position: absolute;
